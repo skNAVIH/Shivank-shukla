@@ -1,0 +1,50 @@
+from tkinter import *
+
+root =Tk()
+root.geometry("490x580")
+root.maxsize(490,580)
+root.minsize(490,580)
+
+
+
+#def action():
+#you could design the action as you like 
+
+
+
+#label/enter field
+l1=Label(text="Profile Disinter",font="time 28 bold" ).place(x=7,y=22)
+l2=Label(text="Name",font="time 18 bold").place(x=30,y=65)
+e1=Entry(root,width=30,bd=3).place(x=258,y=72)
+l3=Label(text="Age",font="time 18 bold").place(x=30,y=126)
+e2=Entry(root,width=30,bd=3).place(x=258,y=126)
+
+#radio button
+Gender=StringVar()
+l4=Label(text="Gender",font="time 18 bold").place(x=30,y=187)
+r1=Radiobutton(root,text="Male",variable=Gender,value="Male",font="time 12").place(x=260,y=187)
+r2=Radiobutton(root,text="Female",variable=Gender,value="Female",font="time 12").place(x=360,y=187)
+
+#combo box
+l5=Label(text="Blood group",font="time 18 bold").place(x=30,y=248)
+lists=("A+","A-","B+","B-","O+","O-","AB+","AB-")
+listblood = StringVar(root)
+listblood.set("Select your blood group")
+menu=OptionMenu(root,listblood,*lists).place(x=260,y=248,width=190)
+
+
+
+#check button
+l6=Label(text="Account",font="time 18 bold").place(x=30,y=309)
+var1=StringVar()
+var2=StringVar()
+l7=Checkbutton(root,text="Public",variable=var1,font="time 15").place(x=260,y=309)
+l8=Checkbutton(root,text="Private",variable=var2,font="time 15").place(x=360,y=309)
+
+#button
+button1=Button(root,text="Submit",fg="white",background="blue",font="time 12 bold",width=38,command=root.quit).place(x=38,y=369)
+button2=Button(root,text="EXIT",fg="white",background="red",font="time 12 bold",width=38,command=root.quit).place(x=38,y=419)
+
+
+
+root.mainloop()
