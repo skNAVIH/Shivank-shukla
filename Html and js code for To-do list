@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <title>Hello, world!</title>
+    <script type="text/javascript">
+      function addItem(){
+          var tempItem = document.getElementById("new_list_item").value;
+          console.log(tempItem);
+          listItems.push(tempItem);
+          displayList(tempItem);
+          var tempItem = document.getElementById("new_list_item").value = '';
+      }
+      function clearList(){
+          document.getElementById("display").innerHTML = ''
+      }
+      function welcome(){
+          var date = new Date();
+          var weekday = date.getDay();
+          const day = [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+          ];
+          document.getElementById("welcomeday").innerHTML = "Have a nice, " + day[weekday];
+      }
+      
+  </script>
+  </head>
+  <body onload="welcome()">
+    
+    <style>
+      body {
+        background-image: url(''); <! --hear you in url section enter the image which you want to show in background-->
+      }
+    </style>
+    
+    <section class="controllers container" align="center">
+        <h1 align="center" id="welcomeday"></h1>
+        <br>
+    <input placeholder="Enter List Items" type="text" id="new_list_item" style="width: 100%;">
+    <br>
+    <br>
+    <button type="button" class="btn btn-outline-primary" onclick="addItem()" style="margin-right: 4px;">Add Item</button> 
+    <button type="button" class="btn btn-outline-danger" onclick="clearList()" style="margin-left: 4px;">Clear List</button> 
+    </section>
+    <script>
+        var listItems = ['Buy Groceries', 'Make Breakfast'];
+    </script>
+    <section class="fullweb">
+        <h3>
+            Your TODO List:
+        </h3>
+    <div id='display'>
+        <ul>
+            <script type="text/javascript">
+                listItems.forEach(displayList);
+
+                function displayList(item) {
+                    document.getElementById("display").innerHTML += "<li>"+item+"</li>"
+                    span.className("close")
+                }
+
+                var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+            </script>
+        </ul>
+    </div>
+</section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  </body>
+</html>
